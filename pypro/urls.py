@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from pypro.base.views import home
 
+# fazer mapeamento do que está na view
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home),
 ]
