@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-we*m=^(k_bom#vhqp1gtbf-hc$ij#2ym&2bj)^-m@kn&tz9vjx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# config tenta achar o nome da configuração dentro de seus parenteses
+# onde ela vai buscar esse valor? primeiramente ela vai tentar achar este valor 
+# de dentro do parenteses por uma variável de ambiente com o mesmo nome, caso
+# essa variável de ambiente não esteja definida, ele vai buscar em um arquivo
+# chamado .env
+# esse arquivo é criado para que no ambiente de produção apareça o erro, mas no
+# site que está no ar não
+# no terminal para configurar o heroku como false deve-se correr
+# >>> $ heroku config:set DEBUG=False
+DEBUG = config('DEBUG', cast=bool) # cast serve para conversão de tipos
 
 ALLOWED_HOSTS = ['*']
 
