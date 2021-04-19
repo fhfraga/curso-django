@@ -21,7 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-we*m=^(k_bom#vhqp1gtbf-hc$ij#2ym&2bj)^-m@kn&tz9vjx'
+# para gerar uma chave aleatório rodar no terminal o pipenv shell em seguida
+# abrir o python e rodar
+# >>> from django.core.management.utils import get_random_secret_key
+# >>> get_random_secret_key() # irar gerar uma chave aleatória
+# para colocar essa chave no heroku, configurar ele no terminal com o comando
+# heroku config:set SECRET_KEY=<sua_chave_secreta_gerada>
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # config tenta achar o nome da configuração dentro de seus parenteses
