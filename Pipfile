@@ -12,6 +12,7 @@ pytest-cov = "*"
 [packages]
 django = "*"
 gunicorn = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.8"
