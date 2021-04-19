@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import decouple
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +42,10 @@ SECRET_KEY = config('SECRET_KEY')
 # >>> $ heroku config:set DEBUG=False
 DEBUG = config('DEBUG', cast=bool) # cast serve para conversão de tipos
 
-ALLOWED_HOSTS = ['*']
+# decouple.Csv() permite colocar valores separados por vírgula
+# no terminal para configurar o heroku com os hosts
+# >>> $ heroku config:set ALLOWED_HOSTS=<endereço_do_site>
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=decouple.Csv())
 
 
 # Application definition
