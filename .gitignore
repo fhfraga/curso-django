@@ -64,6 +64,9 @@ local_settings.py
 db.sqlite3
 staticfiles
 
+# mediafiles
+mediafiles/
+
 # Flask stuff:
 instance/
 .webassets-cache
