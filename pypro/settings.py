@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'collectfast'
     'django.contrib.staticfiles',
     'pypro.base.apps',
 ]
@@ -162,6 +163,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # variáveis para uploads de arquivos
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
