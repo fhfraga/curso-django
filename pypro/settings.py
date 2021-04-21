@@ -102,8 +102,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pypro.wsgi.application'
 
 # Configuração django debug toolbar
+# o comando procurar por IPS em que pode acessar o debug toolbar, por padrão
+# o ip é 127.0.0.1
 INTERNAL_IPS=config('INTERNAL_IPS', cast=decouple.Csv(), default='127.0.0.1')
 
+# se o Debug for verdadeirom coloque debug toolbar em INSTALLED_APPS e
+# adicionado debug_toolbar como o primeiro comando em MIDDLEWARE
 if DEBUG:
     INSTALLED_APPS.append('debug_toolbar')
     MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
