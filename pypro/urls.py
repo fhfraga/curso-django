@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import base
+#import base
 
 # fazer mapeamento do que está na view
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('base.urls')),
+    path('', include('pypro.base.urls')),
 ]
