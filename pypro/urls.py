@@ -26,6 +26,8 @@ urlpatterns = [
 
 ]
 
+# se DEBUG for verdadeiro, import o debug_toolbar e adicione a lista urlpatterns
+# o padrão do caminho abaixo
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns.append(
