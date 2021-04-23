@@ -22,8 +22,9 @@ from django.conf import settings
 # fazer mapeamento do que está na view
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pypro.base.urls')),
-
+    path('', include('pypro.base.urls')), # serve para mostrar o caminho da urls
+# de base, pois se incluir algo na frente terá que colocar antes do caminho das
+# urls de base. Por exemplo colocamos 'pypro' as url de base serão pypro/urls_base
 ]
 
 # se DEBUG for verdadeiro, import o debug_toolbar e adicione a lista urlpatterns
