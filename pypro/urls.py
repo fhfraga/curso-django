@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('pypro.base.urls')), # serve para mostrar o caminho da urls
 # de base, pois se incluir algo na frente terá que colocar antes do caminho das
 # urls de base. Por exemplo colocamos 'pypro' as url de base serão pypro/urls_base
+
+    path('aperitivos/', include('pypro.aperitivos.urls'))
 ]
 
 # se DEBUG for verdadeiro, import o debug_toolbar e adicione a lista urlpatterns

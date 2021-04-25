@@ -64,7 +64,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pypro.base'
+    'pypro.base',
+    'pypro.aperitivos'
 ]
 
 # comando para informar ao django a classe base utilizada como usuário
