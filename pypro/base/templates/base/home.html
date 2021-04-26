@@ -1,9 +1,11 @@
-{% extends 'base/base.html' %}
-{%  load static %}
+{% extends 'base/base.html' %} <!-- pega a base do arquivo base.html -->
+{% load static %} <!-- diz ao Django para carregar as tags do template estático 
+	que são fornecidas pelo aplicativo django.contrib.staticfiles, que está 
+	contido na configuração INSTALLED_APPS.  -->
 
-{% block title%}Python Pro Fernando - Home{% endblock title%}
+{% block title%}Python Pro Fernando - Home{% endblock title%} <!-- bloco do título -->
 
-{%block body%}
+{%block body%} <!-- bloco do corpo da página -->
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
