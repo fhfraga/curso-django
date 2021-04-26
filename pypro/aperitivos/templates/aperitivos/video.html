@@ -1,15 +1,24 @@
-{% extends 'base/base.html' %}
-{%  load static %}
-{% block title %}Python Pro Fernando - Aperitivo{% endblock title %}
+{% extends 'base/base.html' %} <!-- pega a base do arquivo base.html -->
+{% load static %} <!-- diz ao Django para carregar as tags do template estático 
+	que são fornecidas pelo aplicativo django.contrib.staticfiles, que está 
+	contido na configuração INSTALLED_APPS.  -->
+{% block title %}Python Pro Fernando - Aperitivo{% endblock title %} <!-- bloco do título -->
 {% block description %}Página com vídeo gratuito de Python{% endblock description %}
+<!-- bloco da descrição -->
 
-{% block body %}
+{% block body %} <!-- bloco do corpo da página -->
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="mt-4 mb-3">{{ video.titulo }}</h1>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h1 class="mt-4 mb-3">{{ video.titulo | default:"Faltando Título"}}
+			<!-- o código anterior pega código python do arquivo views e 
+				transforma esse código em uma vizualização html -->
+			</h1>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.youtube_id }}" 
+			title="YouTube video player" frameborder="0" 
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+			allowfullscreen></iframe>
 		</div>
 	</div>
 </div>	
