@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %} <!-- pega a base do arquivo base.html -->
+{% load static %} <!-- diz ao Django para carregar as tags do template estático 
+	que são fornecidas pelo aplicativo django.contrib.staticfiles, que está 
+	contido na configuração INSTALLED_APPS.  -->
+{% block title %}Python Pro Fernando - Aperitivos{% endblock title %} <!-- bloco do título -->
+{% block description %}Página com todos os vídeos gratuitos{% endblock description %}
+<!-- bloco da descrição -->
+
+{% block body %} <!-- bloco do corpo da página -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="mt-4 mb-3">Lista de Vídeos Aperitivos</h1>
+			<ol>
+				{% for video in videos%}
+				<li>{{ video.titulo | default:"Faltando Título" }}</li>
+				{% empty %}
+				<li>Não foi encontrado nenhum vídeo de aperitivo</li>
+				{% endfor %}
+			</ol>
+		</div>
+	</div>
+</div>
+
+{% endblock body %}
