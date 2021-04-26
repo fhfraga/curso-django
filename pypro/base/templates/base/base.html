@@ -42,30 +42,11 @@
     {% endblock body %}
 	
 	<!-- rodapé da pagina: padrão para todas as páginas-->
-<footer class="main-footer mt-5 pt-4 text-light">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h3>Entre em contato</h3>
-				<address>
-					+55 21 99876-54321
-					<br/>
-					<a href="mailto:contato@cursodjangofernando.com.br"
-					class="text-light"> contato@cursodjangofernando.com.br</a>
-				</address>
-			</div>
-		</div>
-	</div>
-	<div class="rights pb-1">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					{% now 'Y'%} Curso Django Fernando. Todos os direitos reservados
-				</div>
-			</div>
-		</div>
-</div>
+	{% include 'base/footer.html' with contato_email='contato@cursodjangofernando.com.br' only %}
+	<!-- only = serve para dizer que apenas as variáveis anteriores devem ser
+	renderizadas; with = serve para dizer o que quer que compartilhe nesta
+	página.
+ 	https://docs.djangoproject.com/en/3.2/ref/templates/builtins/ -->
 
-</footer>
   </body>
 </html>
