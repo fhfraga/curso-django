@@ -1,19 +1,9 @@
+from pypro.aperitivos.models import Video
 from django.shortcuts import render
-from django.urls import reverse
-
-class Video:
-    def __init__(self, slug, titulo, youtube_id):
-        self.slug = slug
-        self.titulo = titulo
-        self.youtube_id = youtube_id
-
-    # criado para levar a pagina de detalhamento do modelo requerido
-    def get_absolute_url(self):
-        return reverse('aperitivos:video', args=(self.slug,))
 
 videos=[
-       Video('motivacao', 'Video Aperitivo: Motivação', '2aYplgJrPDU'),
-       Video('instalacao-windows', 'Instalação Python no Windows', 'ScmQ4I5Qr5s')
+       Video(slug='motivacao', titulo='Video Aperitivo: Motivação', youtube_id='2aYplgJrPDU'),
+       Video(slug='instalacao-windows', titulo='Instalação Python no Windows', youtube_id='ScmQ4I5Qr5s')
 ]
 
 videos_dct = {v.slug: v for v in videos}
