@@ -14,5 +14,7 @@ def indice(request):
 
 
 def video(request, slug):
-    video = videos_dct[slug]
+    # objects retorna um objeto do tipo QuerySet; o metodo get busca apenas um objeto no banco de dados
+    # se ele encontrar nenhum ou mais de um ele dará um erro
+    video = Video.objects.get(slug=slug)
     return render(request, 'aperitivos/video.html', context={'video': video})
